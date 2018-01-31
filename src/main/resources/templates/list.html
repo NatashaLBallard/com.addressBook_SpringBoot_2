@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<a href="/add">Add An Address</a><br/>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+    </tr>
+    <tr th:each="course: ${courses}">
+        <td th:text="${course.first_name}"></td>
+        <td th:text="${course.last_name}"></td>
+        <td th:text="${course.email}"></td>
+        <td th:text="${course.address_info}"></td>
+        <td th:text="${course.phone_number}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${address.id})}">Update</a>
+            <a th:href="@{/detail/{id}(id=${address.id})}">Details</a>
+            <a th:href="@{/delete/{id}(id=${address.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
