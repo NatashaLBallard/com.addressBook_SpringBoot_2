@@ -14,12 +14,12 @@
         <th>Address</th>
         <th>Phone Number</th>
     </tr>
-    <tr th:each="course: ${courses}">
-        <td th:text="${course.first_name}"></td>
-        <td th:text="${course.last_name}"></td>
-        <td th:text="${course.email}"></td>
-        <td th:text="${course.address_info}"></td>
-        <td th:text="${course.phone_number}"></td>
+    <tr th:each="address: ${addresses}">
+        <td th:text="${address.first_name}"></td>
+        <td th:text="${address.last_name}"></td>
+        <td th:text="${address.email}"></td>
+        <td th:text="${address.address_info}"></td>
+        <td th:text="${address.phone_number}"></td>
         <td>
             <a th:href="@{/update/{id}(id=${address.id})}">Update</a>
             <a th:href="@{/detail/{id}(id=${address.id})}">Details</a>
