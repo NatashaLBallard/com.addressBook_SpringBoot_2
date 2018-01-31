@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
@@ -36,7 +37,8 @@ public class HomeController {
             return "addressform";
         }
         addressRepository.save(address);
-        return "redirect:/";
+        return "list";
+        //return "redirect:/";
     }
 
     @RequestMapping("/detail/{id}")
@@ -56,5 +58,20 @@ public class HomeController {
         addressRepository.delete(id);
         return "redirect:/";
     }
+
+
+    @GetMapping ("/search")
+    public String getSearch(){
+        return "search";
+    }
+
+    @PostMapping("/search")
+    public String showSearchResults(HttpServletRequest request, Model model){
+        String searchString = request.getParameter("search");
+        model.addAttribute("search",searchString);
+        model.addAttribute("addresses", addressRepository.findAllBy(searchString));
+        return "list";
+    }
+
 
 }

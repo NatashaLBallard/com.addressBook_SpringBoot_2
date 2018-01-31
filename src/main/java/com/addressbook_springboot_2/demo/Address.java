@@ -32,7 +32,11 @@ public class Address {
 
     @NotNull
     @Min(10)
-    private int phone_number;
+    private String phone_number;
+
+    @NotNull
+    @Min(1)
+    private String search;
 
     public long getId() {
         return id;
@@ -74,11 +78,19 @@ public class Address {
         this.address_info = address_info;
     }
 
-    public int getPhone_number() {
+    public String getPhone_number() {
         return phone_number;
     }
 
-    public void setPhone_number(int phone_number) {
+    public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
+    }
+
+    public String getSearch() {
+        return search;
+    }
+
+    public void getSearch(String search) {
+        this.search = search;
     }
 }

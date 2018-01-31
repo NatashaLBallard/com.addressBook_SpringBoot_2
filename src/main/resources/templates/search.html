@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+    <b>Search Addresses</b>
+    <p>Search address book with complete or partial information.</p>
+    <form th:action="@{/search}" method="post">
+        <input type="text" name="search" />
+        <span th:if="${#fields.hasErrors('search')}"
+              th:errors="*{search}"></span><br/>
+
+
+        <!--<input type="submit" value="Search" />-->
+    </form>
+
+    <div th:if="${search}!=null" th:inline="text">You searched for [[${search}]]</div>
+</body>
+</html>
