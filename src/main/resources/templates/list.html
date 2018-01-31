@@ -5,7 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/add">Add An Address</a><br/>
+<a href="/add">Add An Address</a><br/><br/><br/>
+
+
+<b>Search Addresses</b>
+<p>Search address book for <em>first name</em> with complete or partial information.</p>
+
+
 <table>
     <tr>
         <th>First Name</th>
@@ -15,15 +21,22 @@
         <th>Phone Number</th>
     </tr>
 
+    <form th:action="@{/search}" method="post">
+        <input type="text" name="search" />
+        <!--<span th:if="${#fields.hasErrors('search')}"-->
+        <!--th:errors="*{search}"></span><br/>-->
+        <input type="submit" value="Search" />
+    </form>
+
     <div th:if="${search}!=null" th:inline="text">You searched for [[${search}]]</div>
 
 
     <tr th:each="address: ${addresses}">
-        <td th:text="${address.first_name}"></td>
-        <td th:text="${address.last_name}"></td>
+        <td th:text="${address.firstName}"></td>
+        <td th:text="${address.lastName}"></td>
         <td th:text="${address.email}"></td>
-        <td th:text="${address.address_info}"></td>
-        <td th:text="${address.phone_number}"></td>
+        <td th:text="${address.addressInfo}"></td>
+        <td th:text="${address.phoneNumber}"></td>
         <td>
             <a th:href="@{/update/{id}(id=${address.id})}">Update</a>
             <a th:href="@{/detail/{id}(id=${address.id})}">Details</a>

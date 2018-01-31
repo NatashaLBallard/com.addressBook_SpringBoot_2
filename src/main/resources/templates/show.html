@@ -6,11 +6,11 @@
 </head>
 <body>
 <a href="/">Show All Address Listings</a><br/>
-<b>First Name: </b><span th:text="${address.first_name}" ></span><br/>
-<b>Last Name: </b><span th:text="${address.last_name}" ></span><br/>
+<b>First Name: </b><span th:text="${address.firstName}" ></span><br/>
+<b>Last Name: </b><span th:text="${address.lastName}" ></span><br/>
 <b>Email: </b><span th:text="${address.email}" ></span><br/>
-<b>Address: </b><span th:text="${address.address_info}" ></span><br/>
-<b>Phone Number: </b><span th:text="${address.phone_number}" ></span><br/>
+<b>Address: </b><span th:text="${address.addressInfo}" ></span><br/>
+<b>Phone Number: </b><span th:text="${address.phone_Number}" ></span><br/>
 
 <a th:href="@{/delete/{id}(id=${address.id})}">Delete This Listing</a>
 </body>

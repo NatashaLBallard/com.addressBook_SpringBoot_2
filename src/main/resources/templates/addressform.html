@@ -12,14 +12,14 @@
     <input type="hidden" th:field="*{id}" />
 
     <b>First Name: </b>
-    <input type="text" th:field="*{first_name}" />
-    <span th:if="${#fields.hasErrors('first_name')}"
-          th:errors="*{first_name}"></span><br/>
+    <input type="text" th:field="*{firstName}" />
+    <span th:if="${#fields.hasErrors('firstName')}"
+          th:errors="*{firstName}"></span><br/>
 
     <b>Last Name: </b>
-    <input type="text" th:field="*{last_name}" />
-    <span th:if="${#fields.hasErrors('last_name')}"
-          th:errors="*{last_name}"></span><br/>
+    <input type="text" th:field="*{lastName}" />
+    <span th:if="${#fields.hasErrors('lastName')}"
+          th:errors="*{lastName}"></span><br/>
 
     <b>Email: </b>
     <input type="text" th:field="*{email}" />
@@ -27,14 +27,14 @@
           th:errors="*{email}"></span><br/>
 
     <b>Address: </b>
-    <textarea rows="3" th:field="*{address_info}" />
-    <span th:if="${#fields.hasErrors('address_info')}"
-          th:errors="*{address_info}"></span><br/>
+    <textarea rows="3" th:field="*{addressInfo}" />
+    <span th:if="${#fields.hasErrors('addressInfo')}"
+          th:errors="*{addressInfo}"></span><br/>
 
     <b>Phone Number: </b>
-    <input type="text" th:field="*{phone_number}" />
-    <span th:if="${#fields.hasErrors('phone_number')}"
-          th:errors="*{phone_number}"></span><br/>
+    <input type="text" th:field="*{phoneNumber}" />
+    <span th:if="${#fields.hasErrors('phoneNumber')}"
+          th:errors="*{phoneNumber}"></span><br/>
     <br/>
 
     <input type="submit" value="Submit" />

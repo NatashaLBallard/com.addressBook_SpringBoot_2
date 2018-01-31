@@ -32,13 +32,12 @@ public class HomeController {
     }
 
     @PostMapping("/process")
-    public String processorForm(@Valid Address address, BindingResult result){
+    public String processForm(@Valid Address address, BindingResult result){
         if (result.hasErrors()){
             return "addressform";
         }
         addressRepository.save(address);
-        return "list";
-        //return "redirect:/";
+        return "redirect:/";
     }
 
     @RequestMapping("/detail/{id}")
@@ -68,8 +67,16 @@ public class HomeController {
     @PostMapping("/search")
     public String showSearchResults(HttpServletRequest request, Model model){
         String searchString = request.getParameter("search");
+        //System.out.println(searchString);
         model.addAttribute("search",searchString);
-        model.addAttribute("addresses", addressRepository.findAllBy(searchString));
+//        model.addAttribute("address", addressRepository.findAllByFirstNameOrLastNameOrEmailOrAddressInfoOrPhoneNumber (searchString));
+        model.addAttribute("addresses", addressRepository.findAllByFirstName (searchString));
+//        model.addAttribute("addresses", addressRepository.findAllByLastName (searchString));
+//        model.addAttribute("addresses", addressRepository.findAllByEmail (searchString));
+//        model.addAttribute("addresses", addressRepository.findAllByAddressInfo (searchString));
+//        model.addAttribute("addresses", addressRepository.findAllByPhoneNumber (searchString));
+
+
         return "list";
     }
 

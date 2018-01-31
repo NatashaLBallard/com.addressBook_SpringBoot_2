@@ -4,7 +4,13 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface AddressRepository extends CrudRepository<Address, Long> {
 
-    Iterable<Address> findAllBy(String search);
-}
+ //   Iterable<Address> findAllByFirstNameOrLastNameOrEmailOrAddressInfoOrPhoneNumber(String search);
 
-//findAllByTitleContainingIgnoreCase
+    Iterable<Address> findAllByFirstName(String search);
+//    Iterable<Address> findAllByLastName(String search);
+//    Iterable<Address> findAllByEmail(String search);
+//    Iterable<Address> findAllByAddressInfo(String search);
+//    Iterable<Address> findAllByPhoneNumber(String search);
+
+
+}

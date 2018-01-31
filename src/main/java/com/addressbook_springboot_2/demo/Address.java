@@ -16,11 +16,11 @@ public class Address {
 
     @NotNull
     @Size(min=3)
-    private String first_name;
+    private String firstName;
 
     @NotNull
     @Size(min=3)
-    private String last_name;
+    private String lastName;
 
     @NotNull
     @Size(min=8)
@@ -28,14 +28,13 @@ public class Address {
 
     @NotNull
     @Size(min=10)
-    private String address_info;
+    private String addressInfo;
 
     @NotNull
     @Min(10)
-    private String phone_number;
+    private String phoneNumber;
 
-    @NotNull
-    @Min(1)
+
     private String search;
 
     public long getId() {
@@ -46,20 +45,20 @@ public class Address {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -70,20 +69,20 @@ public class Address {
         this.email = email;
     }
 
-    public String getAddress_info() {
-        return address_info;
+    public String getAddressInfo() {
+        return addressInfo;
     }
 
-    public void setAddress_info(String address_info) {
-        this.address_info = address_info;
+    public void setAddressInfo(String addressInfo) {
+        this.addressInfo = addressInfo;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getSearch() {
